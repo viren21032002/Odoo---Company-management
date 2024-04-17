@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+company_management.access_employee_data,access_employee_data,company_management.model_employee_data,base.group_user,1,1,1,1
+company_management.access_designation_data,access_designation_data,company_management.model_designation_data,base.group_user,1,1,1,1
+company_management.access_department_data,access_department_data,company_management.model_department_data,base.group_user,1,1,1,1
+company_management.access_employee_register,access_employee_register,company_management.model_employee_register,base.group_user,1,1,1,1
+company_management.access_project_details,access_project_details,company_management.model_project_details,base.group_user,1,1,1,1

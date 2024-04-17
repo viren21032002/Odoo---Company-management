@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="project_details_tree_view" model="ir.ui.view">
+        <field name="name">project.details.tree.view</field>
+        <field name="model">project.details</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="project_department_id"/>
+                <field name="project_team_lead_ids"/>
+                <field name="project_manager_id"/>
+                <field name="emp_data_ids"/>
+            </tree>
+        </field>
+    </record>
+    <record id="project_details_form_view" model="ir.ui.view">
+        <field name="name">project.details.form.view</field>
+        <field name="model">project.details</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="project_department_id"/>
+                    </group>
+                    <group>
+                        <field name="project_team_lead_ids"/>
+                    </group>
+                    <group>
+                        <field name="project_manager_id"/>
+                    </group>
+                    <notebook>
+                        <page string="Assigned employee data">
+                            <field name="emp_data_ids">
+                                <tree>
+                                    <field name="employee_id"/>
+                                    <field name="designation_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="project_details_action">
+        <field name="name">project details</field>
+        <field name="res_model">project.details</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="project details"
+              id="project_details_menu"
+              parent="company_management"
+              action="project_details_action"
+              sequence="5"/>
+</odoo>

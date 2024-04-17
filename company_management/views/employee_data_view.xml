@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="employee_data_tree_view" model="ir.ui.view">
+        <field name="name">employee.data.tree.view</field>
+        <field name="model">employee.data</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="employee_age"/>
+                <field name="employee_phone_number"/>
+                <field name="company_name"/>
+                <field name="employee_position_id"/>
+                <field name="employee_department_id"/>
+                <field name="employee_experience"/>
+<!--                <field name="project_ids"/>-->
+            </tree>
+        </field>
+    </record>
+    <record id="employee_data_form_view" model="ir.ui.view">
+        <field name="name">employee.data.form.view</field>
+        <field name="model">employee.data</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="employee_id"/>
+                    </group>
+                    <group>
+                        <field name="employee_age"/>
+                    </group>
+                    <group>
+                        <field name="employee_phone_number"/>
+                    </group>
+                    <group>
+                        <field name="company_name"/>
+                    </group>
+                    <group>
+                        <field name="employee_position_id"/>
+                    </group>
+                    <group>
+                        <field name="employee_department_id"/>
+                    </group>
+                    <group>
+                        <field name="employee_experience"/>
+                    </group>
+<!--                    <group>-->
+<!--                        <field name="project_ids"/>-->
+<!--                    </group>-->
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="employee_data_action">
+        <field name="name">employee data</field>
+        <field name="res_model">employee.data</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="Company management"
+              id="company_management"
+              sequence="0"/>
+    <menuitem name="Employee data"
+              id="employee_data_menu"
+              parent="company_management"
+              action="employee_data_action"
+              sequence="1"/>
+</odoo>

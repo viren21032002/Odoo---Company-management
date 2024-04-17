@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="employee_register_tree_view" model="ir.ui.view">
+        <field name="name">employee.register.tree.view</field>
+        <field name="model">employee.register</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="employee_id"/>
+                <field name="designation_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="employee_register_form_view" model="ir.ui.view">
+        <field name="name">employee.register.form.view</field>
+        <field name="model">employee.register</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="employee_id"/>
+                    </group>
+                    <group>
+                        <field name="designation_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="employee_register_action">
+        <field name="name">employee register</field>
+        <field name="res_model">employee.register</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="employee register"
+              id="employee_register_menu"
+              parent="company_management"
+              action="employee_register_action"
+              sequence="4"/>
+</odoo>
